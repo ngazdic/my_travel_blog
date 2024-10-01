@@ -5,21 +5,13 @@ import Data from './data.jsx';
 
 function App() {
 	const newData = Data.map((item) => {
-		return (
-			<Card
-				key={item.id}
-				img={item.titleImg}
-				location={item.location}
-				date={item.date}
-				description={item.description}
-			/>
-		);
+		return <Card key={item.id} item={item} />;
 	});
 
 	return (
 		<div className='container'>
 			<Nav />
-			<div className='row'>{newData}</div>
+			<div className='row container'>{newData}</div>
 		</div>
 	);
 }
